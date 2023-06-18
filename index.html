@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/6773008001.js" crossorigin="anonymous"></script>
+    
 
 </head>
 <body>
@@ -35,44 +36,76 @@
                 </div>
         </div>
     </div>
+<!-- -------------------------------------------SAVE PAGE----------------------------------------->
+
     <div id="savepage">
         <div class="container">
             <div class="header">
                 <div class="heading">
-                    <h1>MY NEWSFEED</h1>
-                </div>
-                <div>
-                    <div class="btn btn2">SAVE NEWS</div>
+                    <div><h1>MY NEWSFEED</h1></div>
+                    <div class="btn2">SAVED NEWS</div>
                 </div>
             </div>
-            <div class="info">
-                <p>By <span>Name</span></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Deleniti ab et quibusdam quaerat veniam? Placeat facere commodi quaerat impedit 
-                    harum sunt mollitia alias aperiam labore eius natus aliquam, inventore debitis?
-                </p>
-            </div>
+            <div id="add">
 
+            </div>
+            
         </div>
     </div>
+<!-- ---------------------------------------LOAD PAGE--------------------------------------->
+
     <div id="loadpage">
         <div class="container">
             <div class="header">
                 <div class="heading">
-                    <h1>MY NEWSFEED</h1>
+                    <div><h1>MY NEWSFEED</h1></div>
+                    <div class="btn2">NEW NEWS</div>
                 </div>
-                <div>
-                    <div class="btn btn2">LOAD NEWS</div>
+                <div class="btn2" id="select">SELECT CATEGORY</div>
+                <div class="heading">
+                    <button class="btn2" onclick="getData()">ALL</button>
+                    <button class="btn2" onclick="getDatab()">BUSINESS</button>
+                    <button class="btn2" onclick="getDatas()" >SPORTS</button>
+                    <button class="btn2" onclick="getDataw()">WORLD</button>
+                    <button class="btn2" onclick="getDatap()">POLITCS</button>
+                    <button class="btn2" onclick="getDatah()">HATKE</button>
+                    <button class="btn2" onclick="getDatas()">SCIENCE</button>
                 </div>
             </div>
             <div class="info">
-                <p>By <span>Name</span></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Deleniti ab et quibusdam quaerat veniam? Placeat facere commodi quaerat impedit 
-                    harum sunt mollitia alias aperiam labore eius natus aliquam, inventore debitis?
+                <div>
+                    <p>By <span id="name">Name</span></p>
+                    <div class="cat">
+                        <p>CATEGORY <span id="category">Sports</span></p>
+                    </div>
+                    
+                </div>
+                <p id="news">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio eaque, sed dolor minima perferendis minus? At voluptatum, atque totam quae veniam praesentium! Omnis quidem facere, fuga quibusdam soluta perspiciatis a?
                 </p>
+                <a href="" id="link">READ MORE</a>
+                <div class="heart">
+                    <button><i class="fa-solid fa-heart" id="save1"></i></button>
+                </div>
+            </div>
+
+            <div class="info" id="info2">
+                <div>
+                    <p>By <span id="name2">Name</span></p>
+                    <div class="cat">
+                        <p>CATEGORY <span id="category2">Sports</span></p>
+                    </div>
+                </div>
+                <p id="news2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio eaque, sed dolor minima perferendis minus? At voluptatum, atque totam quae veniam praesentium! Omnis quidem facere, fuga quibusdam soluta perspiciatis a?
+                </p>
+                <a href="" id="link2">READ MORE</a>
+                <div class="heart">
+                    <button><i class="fa-solid fa-heart" id="save2"></i></button>
+                </div>
             </div>
         </div>
     </div>
+
+<!-- ---------------------------------------------------SCRIPT---------------------------------------------------------->
+    <script src="script.js"></script>
 </body>
 </html>

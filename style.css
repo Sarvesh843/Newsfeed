@@ -11,12 +11,12 @@
     background-position: center;
 }
 .container{
-    padding: 10px 23%;
+    padding: 10px 15%;
 }
 nav img{
     width: 90px;
     height: 90px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 nav h1{
     margin: 10px 0;
@@ -29,11 +29,11 @@ nav h1{
 }
 .heading h1{
     margin: 10px;
-    padding: 5px 30px 10px 30px;
+    padding: 5px 25px 10px 25px;
     color: black;
     background-color: white;
     border-radius: 5px;
-    font-size: 45px;
+    font-size: 40px;
 }
 .pages div{
     display: flex;
@@ -41,16 +41,16 @@ nav h1{
 }
 .btn{
     background-color: #ffde59;
-    padding: 10px 40px;
+    padding: 10px 30px;
     border-radius: 10px;
-    margin: 35px 0 70px 0;
+    margin: 20px 0 30px 0;
     font-size: 25px;
     font-weight: 700;
 }
 #GLT{
     display: flex;
     justify-content: center;
-    margin: 40px;
+    margin: 20px;
     font-size: 45px;
     font-weight: 800;
 }
@@ -59,7 +59,6 @@ nav h1{
     justify-content: center;
     color: black;
     font-size: 60px;
-    margin: 40px;
     font-weight: 700;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px;
@@ -67,12 +66,28 @@ nav h1{
 /* ----------------------------------------Second Page----------------------------------- */
 
 .header{
-    display: flex;
     background-color: black;
     border-radius: 20px;
+    overflow: hidden;
+}
+.heading{
+    display: flex;
+}
+.heading h1{
+    margin: 10px 10px;
+    color: #37352f;
+    font-size: 30px;
 }
 .btn2{
-    margin: 20px 0 20px 0;
+    background-color: #ffde59;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin: 20px 5px 30px 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+#select{
+    margin: 0 100px 5px 5px;
 }
 .info{
     border-radius: 20px;
@@ -80,7 +95,32 @@ nav h1{
     font-size: 20px;
     font-weight: 500;
     margin-top: 20px;
+    padding: 20px;
+}
+.info div{
+    display: flex;
+    justify-content: space-between;
 }
 .info span{
-    font-weight: 800;
+    font-weight: 700;
+}
+.cat{
+    font-size: 15px;
+}
+
+/* ----------------------------------------NEWS PAGE------------------------------------------- */
+.heart{
+    padding: 0 90% ;
+}
+.heart button{
+    background-color: #d9d9d9;
+    border: 0;
+}
+.fa-heart{
+   font-size: 40px;
+   color: rgba(128, 128, 128, 0.5);
+   cursor: pointer;
+}
+.heart-color{
+    color: red;
 }
