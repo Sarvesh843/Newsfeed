@@ -11,7 +11,8 @@
     background-position: center;
 }
 .container{
-    padding: 10px 15%;
+    padding: 20px;
+    margin: 10px 15%;
 }
 nav img{
     width: 90px;
@@ -68,7 +69,12 @@ nav h1{
     -webkit-text-stroke-width: 2px;
 }
 /* ----------------------------------------Second Page----------------------------------- */
-
+#savepage{
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
 .header{
     background-color: black;
     border-radius: 20px;
@@ -86,7 +92,7 @@ nav h1{
     background-color: #ffde59;
     padding: 10px 10px;
     border-radius: 10px;
-    margin: 20px 5px 30px 5px;
+    margin: 10px 5px 30px 5px;
     font-size: 20px;
     font-weight: 700;
 }
@@ -113,6 +119,12 @@ nav h1{
 }
 
 /* ----------------------------------------NEWS PAGE------------------------------------------- */
+#loadpage{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
 .heart{
     padding: 0 90% ;
 }
@@ -127,4 +139,7 @@ nav h1{
 }
 .heart-color{
     color: red;
+}
+.hiddden{
+    display: none;
 }

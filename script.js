@@ -232,3 +232,7 @@ let btn1 = document.getElementById("save1");
   div.innerHTML = value;
   add.appendChild(div);
  })
+function hideButton(){
+  let select = document.getElementById("select");
+  select.classList.toggle("hiddden");
+}
