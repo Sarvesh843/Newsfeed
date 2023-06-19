@@ -47,6 +47,10 @@ nav h1{
     font-size: 25px;
     font-weight: 700;
 }
+.btn a{
+    text-decoration: none;
+    color: black;
+}
 #GLT{
     display: flex;
     justify-content: center;

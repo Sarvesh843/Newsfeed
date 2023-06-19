@@ -42,7 +42,6 @@ function getData(){
   let info2 = document.getElementById("info2");
 
   info2.style.display ="block";
-  console.log(data);
   name.innerText='Swati Dubey';
   category.innerHTML = "WORLD";
   news.textContent = data[2].content;
@@ -229,5 +228,7 @@ let btn1 = document.getElementById("save1");
     <button><i class="fa-solid fa-heart heart-color"></i></button>
   </div>
   </div>`;
-  add.innerHTML = value;
+  let div = document.createElement("div");
+  div.innerHTML = value;
+  add.appendChild(div);
  })
