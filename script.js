@@ -1,238 +1,177 @@
+class Storage {
+  static getNews(){
+      let news;
+      if(localStorage.getItem("news")){
+          news = JSON.parse(localStorage.getItem("news"));
+      }
+      else{
+          news = [];
+      }
+      return news;
+  }
 
-fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-.then((response) => {
-  return response.json()
-})
-.then((data)=> {
-let name = document.getElementById("name");
-let category = document.getElementById("category");
-let news = document.getElementById("news");
-let link = document.getElementById("link");
-let name2 = document.getElementById("name2");
-let category2 = document.getElementById("category2");
-let news2 = document.getElementById("news2");
-let link2 = document.getElementById("link2");
-
-name.innerText='Ankush Verma';
-category.innerHTML = "BUSSINES";
-news.textContent = data[0].content;
-link.href = data[0].url;
-
-name2.innerText='Anmol Sharma';
-category2.innerHTML = "SPORTS";
-news2.textContent = data[1].content;
-link2.href = data[1].url;
-  
-});
-
-function getData(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let name2 = document.getElementById("name2");
-  let category2 = document.getElementById("category2");
-  let news2 = document.getElementById("news2");
-  let link2 = document.getElementById("link2");
-  let info2 = document.getElementById("info2");
-
-  info2.style.display ="block";
-  name.innerText='Swati Dubey';
-  category.innerHTML = "WORLD";
-  news.textContent = data[2].content;
-  link.href = data[2].url;
-
-  name2.innerText='Shreyasi Bansal';
-  category2.innerHTML = "POLITCS";
-  news2.textContent = data[3].content;
-  link2.href = data[3].url;
-    
-});
+  static addtolocalstorage(e){
+      let news = Storage.getNews();
+      news.push(e);
+      localStorage.setItem("news", JSON.stringify(news));
+  }
+  // static removenews(id){
+  //     let news = Storage.getNews();
+  //     news.forEach((p,i) => {
+  //         if(p.id ==id){
+  //             news.splice(i,1);
+  //         }
+  //         localStorage.setItem("news",JSON.stringify(news));
+  //     });
+  // }
 }
-function getDatab(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let info2 = document.getElementById("info2");
+window.Storage = Storage;
 
-  info2.style.display ="none";
-  name.innerText='Ankush Verma';
-  category.innerHTML = "BUSSINES";
-  news.textContent = data[0].content;
-  link.href = data[0].url;    
-});
+const displayLS=() =>{
+  let news = Storage.getNews();
+  console.log(news);
+  news.map((e) => {
+      document.querySelector("#add").innerHTML += `
+      <div class="info">
+        <div>
+          <p>By <span>${e.author}</span></p>
+          <div class="cat">
+            <p>CATEGORY <span>${e.category}</span></p>
+          </div>
+        </div>
+        <p>${e.content}
+        </p>
+        <a href="${e.url}">READ MORE</a>
+        <div class="heart">
+          <button ><i class="fa-solid fa-heart heart-color"></i></button>
+        </div>
+      </div>`;
+  });
+}
+document.addEventListener('DOMContentLoaded',displayLS());
+
+class News {
+  constructor(author,category,content,url){
+      this.author = author;
+      this.category = category;
+      this.content = content;
+      this.url = url;
+  }
 }
 
-function getDatas(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let info2 = document.getElementById("info2");
+const render = () => {
+  let info = document.getElementById("value");
+  info.innerHTML = "";
+  fetch("https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      data.map((e) => {
+        let content =e.content;
+        let conarr = content.split(" ");
+        let val = conarr.join(" ");
 
-  info2.style.display ="none";
-  name.innerText='Anmol Sharma';
-  category.innerHTML = "SPORTS";
-  news.textContent = data[1].content;
-  link.href = data[1].url;    
-});
-}
+        // content.join(" ");
+        console.log(conarr);
 
-function getDataw(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let info2 = document.getElementById("info2");
+        let value = ` 
+      <div class="info">
+        <div>
+          <p>By <span>${e[" author"]}</span></p>
+          <div class="cat">
+            <p>CATEGORY <span>${e[" category"]}</span></p>
+          </div>
+        </div>
+        <p>${e.content}
+        </p>
+        <a href="${e.url}">READ MORE</a>
+        <div class="heart">
+          <button class="heart-button" ><i class="fa-solid fa-heart" author=${e[" author"]} category=${e[" category"]} content=${conarr} url=${e.url}></i></button>
+        </div>
+      </div>`;
+        // console.log(value);
+        info.innerHTML += value;
+      });
 
-  info2.style.display ="none";
-  name.innerText="Swati Dubey";
-  category.innerHTML = "WORLD";
-  news.textContent = data[2].content;
-  link.href = data[2].url;    
-});
-}
-function getDatap(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let info2 = document.getElementById("info2");
+      let heartButtons = document.querySelectorAll(".heart-button");
 
-  info2.style.display ="none";
-  name.innerText="Shreyasi Bansal";
-  category.innerHTML = "POLITCS";
-  news.textContent = data[3].content;
-  link.href = data[3].url;    
-});
-}
-function getDatah(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let info2 = document.getElementById("info2");
+      heartButtons.forEach((button) => {
+        button.onclick = (event) =>{
+          const author = event.target.getAttribute("author");
+          const category = event.target.getAttribute("category");
+          const content = event.target.getAttribute("content");
+          const splitValues = content.split(',');
+          let val = splitValues.join(" ");
+          const url = event.target.getAttribute("url");
+          console.log(splitValues.join(' '));
 
-  info2.style.display ="none";
-  name.innerText="Anmol Sharma";
-  category.innerHTML = "HATKE";
-  news.textContent = data[4].content;
-  link.href = data[4].url;    
-});
-}
-function getDatas(){
-  fetch('https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news')
-  .then((response) => {
-    return response.json()
-})
-  .then((data)=> {
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
-  let info2 = document.getElementById("info2");
+          let data = new News(author,category,val,url);
+          console.log(data);
+          Storage.addtolocalstorage(data);
+        }
+          
+      });
+    });
+};
 
-  info2.style.display ="none";
-  name.innerText="Pragya Swastik";
-  category.innerHTML = "SCIENCE";
-  news.textContent = data[5].content;
-  link.href = data[5].url;    
-});
-}
-let btn1 = document.getElementById("save1");
- btn1.addEventListener('click' ,function(){
-  let name = document.getElementById("name");
-  let category = document.getElementById("category");
-  let news = document.getElementById("news");
-  let link = document.getElementById("link");
- 
+render();
 
-  localStorage.setItem("name", name.innerHTML);
-  localStorage.setItem("category", category.innerHTML);
-  localStorage.setItem("news", news.innerHTML);
-  localStorage.setItem("link", link.href);
-
-  
-  let add = document.getElementById("add")
-  let value =`<div class="info">
-  <div>
-    <p>By <span>${localStorage.getItem("name")}</span></p>
-    <div class="cat">
-      <p>CATEGORY <span id="category2">${localStorage.getItem("category")}</span></p>
-    </div>
-  </div>
-  <p>${localStorage.getItem("news")}</p>
-  <a href="${localStorage.getItem("link")}">READ MORE</a>
-  <div class="heart">
-    <button><i class="fa-solid fa-heart heart-color"></i></button>
-  </div>
-  </div>`;
-  add.innerHTML = value;
- });
- let btn2 = document.getElementById("save2");
- btn2.addEventListener('click' ,function(){
-  let name2 = document.getElementById("name2");
-  let category2 = document.getElementById("category2");
-  let news2 = document.getElementById("news2");
-  let link2 = document.getElementById("link2");
- 
-
-  localStorage.setItem("name2", name2.innerHTML);
-  localStorage.setItem("category2", category2.innerHTML);
-  localStorage.setItem("news2", news2.innerHTML);
-  localStorage.setItem("link2", link2.href);
-
-  
-  let add = document.getElementById("add");
-  let value =`<div class="info">
-  <div>
-    <p>By <span>${localStorage.getItem("name2")}</span></p>
-    <div class="cat">
-      <p>CATEGORY <span id="category2">${localStorage.getItem("category2")}</span></p>
-    </div>
-  </div>
-  <p>${localStorage.getItem("news2")}</p>
-  <a href="${localStorage.getItem("link2")}">READ MORE</a>
-  <div class="heart">
-    <button><i class="fa-solid fa-heart heart-color"></i></button>
-  </div>
-  </div>`;
-  let div = document.createElement("div");
-  div.innerHTML = value;
-  add.appendChild(div);
- })
-function hideButton(){
+const hideButton = () => {
   let select = document.getElementById("select");
-  select.classList.toggle("hiddden");
-}
+  select.classList.toggle("hidden");
+};
+
+const selectCategory = (e) => {
+  let info = document.getElementById("value");
+  info.innerHTML = "";
+  fetch("https://content.newtonschool.co/v1/pr/64806cf8b7d605c99eecde47/news")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let newData = data.filter((val) => {
+        return val[" category"] == e;
+      });
+      // console.log(newData);
+      newData.map((e) => {
+        // console.log(e);
+        let value = ` 
+      <div class="info">
+        <div>
+          <p>By <span>${e[" author"]}</span></p>
+          <div class="cat">
+            <p>CATEGORY <span>${e[" category"]}</span></p>
+          </div>
+        </div>
+        <p>${e.content}
+        </p>
+        <a href="${e.url}">READ MORE</a>
+        <div class="heart">
+          <button class ="heart-button"><i class="fa-solid fa-heart"></i></button>
+        </div>
+      </div>`;
+        // console.log(value);
+        info.innerHTML += value;
+      });
+        let heartButtons = document.querySelectorAll(".heart-button");
+
+      heartButtons.forEach((button) => {
+        button.onclick = (event) =>{
+          const author = event.target.getAttribute("author");
+          const category = event.target.getAttribute("category");
+          const content = event.target.getAttribute("content");
+          const splitValues = content.split(',');
+          let val = splitValues.join(" ");
+          const url = event.target.getAttribute("url");
+          console.log(splitValues.join(' '));
+
+          let data = new News(author,category,val,url);
+          console.log(data);
+          Storage.addtolocalstorage(data);
+        }
+      });
+    });
+};
+
+

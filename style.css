@@ -1,145 +1,230 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins',sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+ 
 }
-#firstpage{
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+body{
+  background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
 }
-.container{
-    padding: 20px;
-    margin: 10px 15%;
+.navbar{
+  padding: 20px;
+  margin: 10px 15%;
+  border-radius: 10px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-nav img{
-    width: 90px;
-    height: 90px;
-    margin-top: 20px;
+#firstpage {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  /* background-color: rgb(43, 84, 180); */
 }
-nav h1{
-    margin: 10px 0;
-    color: #37352f;
-    font-size: 50px;
+.container {
+  padding: 20px;
+  margin: 10px 15%;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.pages{
-    background: black;
-    border-radius: 20px;
+nav img {
+  width: 90px;
+  height: 90px;
+  margin-top: 20px;
 }
-.heading h1{
-    margin: 10px;
-    padding: 5px 25px 10px 25px;
-    color: black;
-    background-color: white;
-    border-radius: 5px;
-    font-size: 40px;
+nav h1 {
+  margin: 10px 0;
+  color: #37352f;
+  font-size: 50px;
 }
-.pages div{
-    display: flex;
-    justify-content: space-around;
+.pages {
+  border-radius: 20px;
+  background: rgba( 0, 0, 0, 0.9 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10px );
+-webkit-backdrop-filter: blur( 10px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.btn{
-    background-color: #ffde59;
-    padding: 10px 30px;
-    border-radius: 10px;
-    margin: 20px 0 30px 0;
-    font-size: 25px;
-    font-weight: 700;
+.heading h1 {
+  margin: 10px;
+  padding: 5px 25px 10px 25px;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 40px;
 }
-.btn a{
-    text-decoration: none;
-    color: black;
+.pages div {
+  display: flex;
+  justify-content: space-around;
 }
-#GLT{
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    font-size: 45px;
-    font-weight: 800;
+.btn {
+  background-color: #ffde59;
+  font-family: inherit;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin: 20px 0 30px 0;
+  font-size: 25px;
+  font-weight: 700;
 }
-#SUP{
-    display: flex;
-    justify-content: center;
-    color: black;
-    font-size: 60px;
-    font-weight: 700;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 2px;
+.btn a {
+  text-decoration: none;
+  color: black;
+}
+#GLT {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  font-size: 45px;
+  font-weight: 800;
+}
+#SUP {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 60px;
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
 }
 /* ----------------------------------------Second Page----------------------------------- */
-#savepage{
-    width: 100%;
-    height: 600px;
-    background-size: cover;
-    background-position: center;
+#savepage {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  /* background-color: rgb(43, 84, 180); */
+
 }
-.header{
-    background-color: black;
-    border-radius: 20px;
-    overflow: hidden;
+.header {
+  background-color: black;
+  border-radius: 20px;
+  overflow: hidden;
 }
-.heading{
-    display: flex;
+.heading {
+  display: flex;
 }
-.heading h1{
-    margin: 10px 10px;
-    color: #37352f;
-    font-size: 30px;
+.heading h1 {
+  margin: 10px 10px;
+  color: #37352f;
+  font-size: 30px;
 }
-.btn2{
-    background-color: #ffde59;
-    padding: 10px 10px;
-    border-radius: 10px;
-    margin: 10px 5px 30px 5px;
-    font-size: 20px;
-    font-weight: 700;
+.btn2 {
+  background-color: #ffde59;
+  font-family: inherit;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin: 10px 5px 30px 5px;
+  font-size: 20px;
+  font-weight: 700;
 }
-#select{
-    margin: 0 100px 5px 5px;
+#select {
+  margin: 0 100px 5px 5px;
 }
-.info{
-    border-radius: 20px;
-    background-color: #d9d9d9;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 20px;
-    padding: 20px;
+.info {
+  /* border-radius: 20px; */
+  /* background-color: #d9d9d9; */
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.info div{
-    display: flex;
-    justify-content: space-between;
+.info div {
+  display: flex;
+  justify-content: space-between;
 }
-.info span{
-    font-weight: 700;
+.info span {
+  font-weight: 700;
 }
-.cat{
-    font-size: 15px;
+.info a {
+  text-decoration: none;
+  color: rgb(114, 37, 114);
+}
+.cat {
+  font-size: 15px;
 }
 
 /* ----------------------------------------NEWS PAGE------------------------------------------- */
-#loadpage{
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+#loadpage {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  /* background-color: rgb(43, 84, 180); */
+
 }
-.heart{
-    padding: 0 90% ;
+.heart {
+  float: right;
+  background:transparent;
 }
-.heart button{
-    background-color: #d9d9d9;
-    border: 0;
+.heart button {
+  background-color: #d9d9d9;
+  border: 0;
+  background: transparent;
 }
-.fa-heart{
-   font-size: 40px;
-   color: rgba(128, 128, 128, 0.5);
-   cursor: pointer;
+.fa-heart {
+  font-size: 40px;
+  color: rgba(128, 128, 128, 0.5);
+  cursor: pointer;
 }
-.heart-color{
-    color: red;
+.heart-color {
+  color: red;
 }
-.hiddden{
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 700px){
+  .container{
+    margin: 0;
+  }
+  .btn3{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  #GLT{
+    font-size: 35px;
+  }
+  #SUP{
+    font-size: 45px;
+  }
+  .heading{
+    display: flex;
+    flex-direction: column;
+  }
+  .heading h1{
+    font-size: 22px;
+    padding: 5px;
+    
+  }
+  .btn2{
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px 40px 10px 10px;
+  }
+  .hidden {
     display: none;
+  }
+  .info span {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .cat{
+    font-size: 12px;
+  }
+
 }
